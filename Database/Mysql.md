@@ -2,7 +2,7 @@
 
 报错原因：在 <font color="yellow">**SQL_mode**</font> 中开启了 <font color="yellow">only_full_group_by</font> 模式。
 
-only_full_group_by的作用：使用这个就是使用和oracle一样的group 规则, selec t的列都要在group中,或者本身是聚合列(SUM,AVG,MAX,MIN) 才行
+only_full_group_by的作用：使用这个就是使用和oracle一样的group 规则, select的列都要在group中,或者本身是聚合列(SUM,AVG,MAX,MIN) 才行
 
 查看 SQL_mode
 
@@ -12,11 +12,11 @@ select @@global.sql_mode
 
 ![img](https://cdn.jsdelivr.net/gh/RonnieLee24/PicGo_Pictures@master/imgs/DB/202301102350408.png)
 
-```b
+```bash
 ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 ```
 
-将SQL_mode中的only_full_group_by 删除。【重启后会失效】
+将 SQL_mode 中的only_full_group_by 删除。【重启后会失效】
 
 ```sql
 set @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
